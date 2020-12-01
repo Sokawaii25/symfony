@@ -1,1 +1,7 @@
-http://10.3.226.105:8000
+//page web :
+http://127.0.0.1:8000
+
+//upload sur github
+git remote add origin https://github.com/Sokawaii25/symfony.git
+git branch -M main
+git push -u origin main
