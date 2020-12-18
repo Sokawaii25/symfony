@@ -16,5 +16,14 @@
         <li>Your controller at <code><a href="{{ 'F:/IUT/2de_annee/php_symfony/ProStages/src/Controller/ProStagesController.php'|file_link(0) }}">src/Controller/ProStagesController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'F:/IUT/2de_annee/php_symfony/ProStages/templates/pro_stages/index.html.twig'|file_link(0) }}">templates/pro_stages/index.html.twig</a></code></li>
     </ul>
+
+    <p>Les différents stages accessibles pour le moment :</p>
+    <ul>
+      <li><a href="{{path('presentationStage', {idStage:1})}}">stage 1</a></li>
+      <li><a href="{{path('presentationStage', {idStage:2})}}">stage 2</a></li>
+      <li><a href="{{path('presentationStage', {idStage:3})}}">stage 3</a></li>
+      <li><a href="{{path('presentationStage', {idStage:4})}}">stage 4</a></li>
+      <li><a href="{{path('presentationStage', {idStage:5})}}">stage 5</a></li>
+    </ul>
 </div>
 {% endblock %}

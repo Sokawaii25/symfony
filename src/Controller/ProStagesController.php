@@ -39,12 +39,12 @@ class ProStagesController extends AbstractController
     }
 
     /**
-       * @Route("/stages/{id}", name="stages")
+       * @Route("/stages/{idStage}", name="presentationStage")
      */
-    public function stages($id): Response
+    public function stages($idStage): Response
     {
-        return $this->render('pro_stages/entreprises.html.twig', [
-            'controller_name' => 'Cette page affichera le descriptif du stage ayant pour identifiant '.$id,
+        return $this->render('pro_stages/presentationStage.html.twig', [
+            'idStage' => $idStage,
         ]);
     }
 }
