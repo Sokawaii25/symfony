@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Stage n°{{idStage}}</title>
-  </head>
-  <body>
-    <h1>Ceci est la future page de description du stage {{idStage}}</h1>
-  </body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage n°{{idStage}} {% endblock %}
+
+{% block body %}
+
+<h1>Ceci est la future page de description du stage {{idStage}}</h1>
+
+{% endblock %}
