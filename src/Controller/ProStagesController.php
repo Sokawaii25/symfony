@@ -33,7 +33,7 @@ class ProStagesController extends AbstractController
      */
     public function formations(): Response
     {
-        return $this->render('pro_stages/entreprises.html.twig', [
+        return $this->render('pro_stages/formations.html.twig', [
             'controller_name' => 'Cette page affichera la liste des formations de l\'IUT',
         ]);
     }

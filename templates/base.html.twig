@@ -6,7 +6,17 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block header %}
+        <center><h1> ProStages </h1></center>
+        <a href="{{path('entreprises')}}">Rechercher par entreprise</a>
+        <a href="{{path('formations')}}">Rechercher par formation</a>
+        {% endblock %}
+        {% block content %}{% endblock %}
+        {% block footer %}
+        <footer>
+          <p> Contact us </p>
+        </footer>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
