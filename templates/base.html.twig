@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>{% block title %}Welcome!{% endblock %}</title>
+
+      <!-- BLOC INTÉGRATION CSS -->
+      {% block stylesheets %}
+      <!-- Intégration Bootstrap -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+      {% endblock %}
     </head>
     <body>
-        {% block header %}
-        <center><h1> ProStages </h1></center>
-        <a href="{{path('entreprises')}}">Rechercher par entreprise</a>
-        <a href="{{path('formations')}}">Rechercher par formation</a>
-        {% endblock %}
-        {% block content %}{% endblock %}
-        {% block footer %}
-        <footer>
-          <p> Contact us </p>
-        </footer>
-        {% endblock %}
-        {% block javascripts %}{% endblock %}
+      {% block header %}
+      <center><h1> ProStages </h1></center>
+      <!-- <a href="{{path('entreprises')}}">Rechercher par entreprise</a> -->
+      <!-- <a href="{{path('formations')}}">Rechercher par formation</a> -->
+      <h2>--------------- HEADER -------------</h2>
+      {% endblock %}
+      {% block content %}{% endblock %}
+      {% block footer %}
+      <footer>
+        <h2>----------- FOOTER ------------</h2>
+        <p> Contact us </p>
+      </footer>
+      {% endblock %}
+
+      <!-- BLOF INTÉGRATION JAVASCRIPT -->
+      {% block javascripts %}
+      <script src="/js/bootstrap.min.css"></script>
+
+      {% endblock %}
     </body>
 </html>
