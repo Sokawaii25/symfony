@@ -2,19 +2,43 @@
 
 {% block title %}Liste des formations{% endblock %}
 
-{% block content %}
+{% block ariane %}
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{path('accueil')}}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <a href="{{path('formations')}}">formations</a>
+    </li>
+  </ol>
+</nav>
+{% endblock %}
+
+{% block content_title %}
 <h1>Cette page listera les formations dipsonibles</h1>
-<table>
-  <tr> <th>Nom de la formation</th> <th>Nombre de stages</th> </tr>
-  <tr>
-    <td>for1</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>for2</td>
-    <td>6</td>
-  </tr>
+{%  endblock %}
 
+{% block content_block %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom de la formation</th>
+      <th scope="col">Nombre de stages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>for1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>for2</td>
+      <td>25</td>
+    </tr>
+  </tbody>
 </table>
-
 {% endblock %}

@@ -2,21 +2,43 @@
 
 {% block title %}Liste des entreprises{% endblock %}
 
-{% block content %}
+{% block ariane %}
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{path('accueil')}}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <a href="{{path('entreprises')}}">entreprises</a>
+    </li>
+  </ol>
+</nav>
+{% endblock %}
 
+{% block content_title %}
 <h1>Cette page affichera la liste des entreprises</h1>
+{%  endblock %}
 
-<table>
-  <tr> <th>Nom de l'entreprise</th> <th>Nombre de stages</th> </tr>
-  <tr>
-    <td>ent1</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>ent2</td>
-    <td>6</td>
-  </tr>
-
+{% block content_block %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom de l'entreprise</th>
+      <th scope="col">Nombre de stages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>ent1</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>ent2</td>
+      <td>13</td>
+    </tr>
+  </tbody>
 </table>
-
 {% endblock %}

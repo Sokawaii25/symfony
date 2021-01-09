@@ -2,8 +2,28 @@
 
 {% block title %}Stage n°{{idStage}} {% endblock %}
 
-{% block content %}
+{% block ariane %}
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{path('accueil')}}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <a href="{{path('presentationStage', {idStage:1})}}">stage</a>
+    </li>
+  </ol>
+</nav>
+{% endblock %}
 
+{% block content_title %}
 <h1>Ceci est la future page de description du stage {{idStage}}</h1>
+{% endblock %}
 
+{% block content_block %}
+<ul class="list-group">
+  <li class="list-group-item disabled" aria-disabled="true">[titre du stage]</li>
+  <li class="list-group-item">Entreprise :</li>
+  <li class="list-group-item">Formation :</li>
+  <li class="list-group-item">description:</li>
+</ul>
 {% endblock %}
