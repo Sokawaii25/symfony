@@ -31,7 +31,7 @@
   <tbody>
     {% for entreprise in entrepriseList %}
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{loop.index + 1}}</th>
       <td>{{entreprise.nom}}</td>
       <td>{{entreprise.stages | length}}</td>
     </tr>

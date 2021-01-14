@@ -31,7 +31,7 @@
   <tbody>
     {% for formation in formationList %}
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{loop.index + 1}}</th>
       <td>{{formation.intitule}}</td>
       <td>{{formation.stages | length}}</td>
     </tr>

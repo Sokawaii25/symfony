@@ -45,10 +45,8 @@ class ProStagesController extends AbstractController
     /**
        * @Route("/stages/{idStage}", name="presentationStage")
      */
-    public function stages($idStage): Response
+    public function stages(Stage $stage): Response
     {
-        $stageRepository = $this->getDoctrine()->getRepository(Stage::class);
-        $stage = $stageRepository->find($idStage);
         return $this->render('pro_stages/presentationStage.html.twig', ['stage' => $stage]);
     }
 }
