@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Stage n°{{idStage}} {% endblock %}
+{% block title %}Stage : {{stage.titre}} {% endblock %}
 
 {% block ariane %}
 <nav>
@@ -9,21 +9,20 @@
       <a href="{{path('accueil')}}">Accueil</a>
     </li>
     <li class="breadcrumb-item active">
-      <a href="{{path('presentationStage', {idStage:1})}}">stage</a>
+      <a href="{{path('presentationStage', {idStage:stage.id})}}">stage</a>
     </li>
   </ol>
 </nav>
 {% endblock %}
 
 {% block content_title %}
-<h1>Ceci est la future page de description du stage {{idStage}}</h1>
+<h1>{{stage.titre}}</h1>
 {% endblock %}
 
 {% block content_block %}
 <ul class="list-group">
-  <li class="list-group-item disabled" aria-disabled="true">[titre du stage]</li>
-  <li class="list-group-item">Entreprise :</li>
-  <li class="list-group-item">Formation :</li>
-  <li class="list-group-item">description:</li>
+  <li class="list-group-item">Entreprise : {{stage.entreprise.nom}}</li>
+  <li class="list-group-item">Formation : {% for formation in stage.formations %}{{formation.intitule}}{% if loop.last == false %}, {% endif %} {% endfor %}</li>
+  <li class="list-group-item">description: {{stage.description}}</li>
 </ul>
 {% endblock %}
