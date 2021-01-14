@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content_title %}
-<h1>Cette page listera les formations dipsonibles</h1>
+<h1>Nombre de stages disponible par formation</h1>
 {%  endblock %}
 
 {% block content_block %}
@@ -29,16 +29,13 @@
     </tr>
   </thead>
   <tbody>
+    {% for formation in formationList %}
     <tr>
       <th scope="row">1</th>
-      <td>for1</td>
-      <td>4</td>
+      <td>{{formation.intitule}}</td>
+      <td>{{formation.stages | length}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>for2</td>
-      <td>25</td>
-    </tr>
+    {% endfor %}
   </tbody>
 </table>
 {% endblock %}

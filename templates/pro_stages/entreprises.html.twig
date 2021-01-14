@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content_title %}
-<h1>Cette page affichera la liste des entreprises</h1>
+<h1>Nombre de stages disponibles par entreprise</h1>
 {%  endblock %}
 
 {% block content_block %}
@@ -29,16 +29,13 @@
     </tr>
   </thead>
   <tbody>
+    {% for entreprise in entrepriseList %}
     <tr>
       <th scope="row">1</th>
-      <td>ent1</td>
-      <td>54</td>
+      <td>{{entreprise.nom}}</td>
+      <td>{{entreprise.stages | length}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>ent2</td>
-      <td>13</td>
-    </tr>
+    {% endfor %}
   </tbody>
 </table>
 {% endblock %}

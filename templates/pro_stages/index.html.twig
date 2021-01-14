@@ -11,7 +11,7 @@
   <p>Les différents stages accessibles pour le moment :</p>
   {% for stage in stageList %}
   <div class="list-group">
-    <a href="{{path('presentationStage', {idStage:stage.id})}}" class="list-group-item list-group-item-action"><span class="badge bg-secondary">New</span>
+    <a href="{{path('presentationStage', {idStage:stage.id})}}" class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{stage.titre}}</h5>
         <small>Formations : {% for formation in stage.formations %}{{formation.intitule}} {% endfor %}</small>
