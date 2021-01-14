@@ -67,7 +67,7 @@ class AppFixtures extends Fixture
 
             for ($numStages=0; $numStages < $nbStagesAGenerer; $numStages++) {
                 $stage = new Stage();
-                $stage -> setTitre($faker->realText($maxNbChars = 150, $indexSize = 2));
+                $stage -> setTitre($faker->realText($maxNbChars = 80, $indexSize = 2));
                 $stage -> setDescription($faker->paragraph($nbSentences = 4, $variableNbSentences = true));
                 $stage -> setEmail($faker->email);
 
