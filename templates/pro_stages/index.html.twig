@@ -1,20 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProStagesController!{% endblock %}
+{% block title %}Accueil - Liste des stages{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block content_title %}
+<h1>Bienvenue sur l'application ProStages </h1>
+{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'F:/IUT/2de_annee/php_symfony/ProStages/src/Controller/ProStagesController.php'|file_link(0) }}">src/Controller/ProStagesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'F:/IUT/2de_annee/php_symfony/ProStages/templates/pro_stages/index.html.twig'|file_link(0) }}">templates/pro_stages/index.html.twig</a></code></li>
-    </ul>
+{% block content_block %}
+<div >
+  <p>Les différents stages accessibles pour le moment :</p>
+  {% for stage in stageList %}
+  <div class="list-group">
+    <a href="{{path('presentationStage', {idStage:stage.id})}}" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{stage.titre}}</h5>
+        <small>Formations : {% for formation in stage.formations %}{{formation.intitule}} {% endfor %}</small>
+      </div>
+      <div class="d-flex w-100 justify-content-between">
+        <small><p class="disabled"> {{stage.entreprise.nom}} - {{stage.entreprise.activite}}</p></small>
+        <small>Contact : {{stage.email}}</small>
+      </div>
+      <p class="mb-1">{{stage.description}}</p>
+    </a>
+    {% endfor %}
+  </ul>
 </div>
 {% endblock %}

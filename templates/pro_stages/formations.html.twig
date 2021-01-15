@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des entreprises{% endblock %}
+{% block title %}Liste des formations{% endblock %}
 
 {% block ariane %}
 <nav>
@@ -9,14 +9,14 @@
       <a href="{{path('accueil')}}">Accueil</a>
     </li>
     <li class="breadcrumb-item active">
-      <a href="{{path('entreprises')}}">entreprises</a>
+      <a href="{{path('formations')}}">formations</a>
     </li>
   </ol>
 </nav>
 {% endblock %}
 
 {% block content_title %}
-<h1>Nombre de stages disponibles par entreprise</h1>
+<h1>Nombre de stages disponible par formation</h1>
 {%  endblock %}
 
 {% block content_block %}
@@ -24,16 +24,16 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nom de l'entreprise</th>
+      <th scope="col">Nom de la formation</th>
       <th scope="col">Nombre de stages</th>
     </tr>
   </thead>
   <tbody>
-    {% for entreprise in entrepriseList %}
+    {% for formation in formationList %}
     <tr>
       <th scope="row">{{loop.index + 1}}</th>
-      <td>{{entreprise.nom}}</td>
-      <td>{{entreprise.stages | length}}</td>
+      <td>{{formation.intitule}}</td>
+      <td>{{formation.stages | length}}</td>
     </tr>
     {% endfor %}
   </tbody>

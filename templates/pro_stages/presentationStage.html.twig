@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage : {{stage.titre}} {% endblock %}
+
+{% block ariane %}
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{path('accueil')}}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <a href="{{path('presentationStage', {idStage:stage.id})}}">stage</a>
+    </li>
+  </ol>
+</nav>
+{% endblock %}
+
+{% block content_title %}
+<h1>{{stage.titre}}</h1>
+{% endblock %}
+
+{% block content_block %}
+<ul class="list-group">
+  <li class="list-group-item">Entreprise : {{stage.entreprise.nom}}</li>
+  <li class="list-group-item">Formation : {% for formation in stage.formations %}{{formation.intitule}}{% if loop.last == false %}, {% endif %} {% endfor %}</li>
+  <li class="list-group-item">description: {{stage.description}}</li>
+</ul>
+{% endblock %}
